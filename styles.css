@@ -1,0 +1,409 @@
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+}
+
+nav .top-center {
+	text-align: center;
+}
+
+nav .left-bar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 25px 0;
+}
+
+nav h2 {
+    margin: 5px auto;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+	transition: 0.5s;
+}
+
+.link-active a{
+	color: silver;
+}
+
+nav ul li a:hover {
+	color: silver;
+}
+
+.author-container {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.author-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.author-image:hover {
+  transform: scale(1.1);
+}
+
+.author-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 600px) {
+  .author-container {
+    bottom: 55px;
+    right: 10px;
+  }
+
+  .author-image {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  background: silver;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0.2, 0.7);
+  z-index: 1001;
+}
+
+.overlay-content {
+  text-align: center;
+  color: black;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: red;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #818791;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #000;
+    color: silver;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.feature-card {
+    background-color: #f9f9f9;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 10px;
+    width: 300px;
+	height: 180px;
+	border-radius: 15px;
+	position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(45deg, black, silver);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: -1;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-card h3{
+	margin-bottom: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .feature-card{
+	  width: 70%;
+  }
+}
+
+body .about-us{
+	margin: 20px auto;
+	background: #c4c8cf;
+	padding: 20px;
+	border-radius: 20px;
+}
+
+body .about-us:hover .about-us-btn{
+	animation: opacity 2s infinite;
+}
+
+body .about-us h3{
+	margin-bottom: 15px;
+}
+
+body .about-us .about-us-btn{
+	margin: 30px auto 10px;
+}
+
+body .about-us .about-us-btn a{
+	padding: 12px;
+	background: #8c929c;
+	color: #fff;
+	width: 150px;
+	border-radius: 15px;
+	text-decoration: none;
+	transition: 0.5s;
+	font-size: 14px;
+}
+
+@keyframes opacity {
+    33% { opacity: 0.5; }
+    66% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+body .about-us .about-us-btn a:hover{
+	background: #4e5157;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p{
+	font-family: 'Courier New';
+	font-size: 14px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+nav,
+.feature-card,
+footer {
+    background-color: #333;
+    color: white;
+}
+
+nav ul li a {
+    color: white;
+}
+
+/* Mode toggle styles */
+.mode-toggle-container {
+    display: flex;
+    align-items: center;
+	justify-content: center;
+}
+
+.mode-toggle {
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sun-container {
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+body.dark-mode .mode-toggle {
+    background-color: #333;
+}
+
+body.dark-mode .sun-container {
+    transform: translateX(20px);
+}
+
+#typewriter-text {
+    font-size: 20px;
+	font-weight: 900;
+    border-right: 2px solid #333;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#typewriter-text.blink-underscore{
+	margin-left: 10.3px;
+}
+
+#typewriter-text.blink-underscore::after {
+    content: '_';
+    display: inline-block;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.1;
+    }
+}
+
+/*paraphrase page*/
+main{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#inputText{
+	min-width: 80%;
+	min-height: 400px;
+	padding: 10px;
+	margin: 5px auto 20px;
+	border-radius: 10px;
+}
+
+#para-in-button{
+	padding: 8px;
+	border-radius: 15px;
+	background: silver;
+	transition: 0.5s;
+	margin-bottom: 20px;
+}
+
+#para-in-button:hover{
+	background: white;
+}
+
+#outputArea{
+	width: 80%;
+	height: 10%;
+	background: #d4d3cf;
+	padding: 10px;
+	text-align: justify;
+	border-radius: 10px;
+}
+
+/*about us*/
+.about-us {
+    padding: 20px;
+	opacity: 0.9;
+}
+
+.team {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.team-member {
+    margin: 50px;
+	background: silver;
+	opacity: 0.9;
+	padding: 20px;
+	border-radius: 15px;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
